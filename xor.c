@@ -22,7 +22,7 @@ void encryptFile(const char *filename, const char *message, const char *key) {
 
     fclose(file);
 }
-
+ 
 void decryptFile(const char *filename, const char *key) {
     FILE *file = fopen(filename, "rb");
     if (!file) {
