@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h> 
 
 void xorEncrypt(char *message, char *key) {
     int keyLen = strlen(key);
@@ -56,6 +58,8 @@ int main() {
     char mode;
     printf("Enter 'e' to encrypt or 'd' to decrypt: ");
     scanf(" %c", &mode);
+
+    while (getchar() != '\n');
 
     if (mode == 'e') {
         char message[100];
