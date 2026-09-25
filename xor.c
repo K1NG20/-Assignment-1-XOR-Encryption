@@ -11,7 +11,7 @@ void xorEncrypt(char *message, char *key) {
 }
 
 void encryptFile(const char *filename, const char *message, const char *key) {
-    FILE *file = fopen(filename, "w");
+    FILE *file = fopen(filename, "wb");
     if (!file) {
         printf("Error opening file for writing.\n");
         return;
@@ -24,11 +24,11 @@ void encryptFile(const char *filename, const char *message, const char *key) {
 }
 
 void decryptFile(const char *filename, const char *key) {
-    FILE *file = fopen(filename, "r");
+    FILE *file = fopen(filename, "rb");
     if (!file) {
         printf("Error opening file for reading.\n");
         return;
-    }
+    } 
 
     fseek(file, 0, SEEK_END);
     long fileSize = ftell(file);
